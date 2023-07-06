@@ -12,10 +12,23 @@ onMounted(() => {
     materialStore.materials = materials;
   });
 });
+
+const deleteMaterial = () => {
+  materialStore.deleteMaterial(1);
+};
+
+const updateMaterial = () => {
+  console.log("here");
+  materialStore.updateMaterial(3, {
+    quantity: 0
+  });
+};
 </script>
 
 <template>
   <main>
+    <button @click="updateMaterial">update material 3</button>
+    <button @click="deleteMaterial">delete material 1</button>
     <TheWelcome />
   </main>
 </template>

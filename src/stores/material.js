@@ -38,7 +38,44 @@ export const useMaterialStore = defineStore("material", () => {
     )
   );
 
+  // this one is used to get materials from the db, not from the store, which is directly accessible from anywhere
   const getMaterials = () => axios("/materials").then((response) => response.data);
+
+  const getMaterial = (id) => axios(`/materials/${id}`).then((response) => response.data);
+
+  const findIndex = (id) => materials.value.findIndex((value) => value.id === id);
+
+  const updateMaterial = (id, updates) => {
+    getMaterial(id)
+      .then((material) => {
+        for (const key in updates) {
+          if (Object.hasOwnProperty.call(updates, key)) {
+            material[key] = updates[key];
+          }
+        }
+
+        return material;
+      })
+      .then((material) =>
+        axios.put(`/materials/${id}`, material).then(() => {
+          const index = findIndex(id);
+
+          if (index !== -1) {
+            materials.value[index] = material;
+          }
+        })
+      );
+  };
+
+  const deleteMaterial = (id) => {
+    axios.delete(`/materials/${id}`).then(() => {
+      const index = findIndex(id);
+
+      if (index !== -1) {
+        materials.value.splice(index, 1);
+      }
+    });
+  };
 
   return {
     materials,
@@ -47,6 +84,9 @@ export const useMaterialStore = defineStore("material", () => {
     goodCount,
     badCount,
     damagedCount,
-    getMaterials
+    getMaterials,
+    getMaterial,
+    updateMaterial,
+    deleteMaterial
   };
 });
