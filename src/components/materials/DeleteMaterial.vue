@@ -18,7 +18,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5">
-              Supprimer le material <span class="text-danger fw-bold">{{ name }}</span>
+              Supprimer le matériel <span class="text-danger fw-bold">{{ name }}</span>
             </h1>
 
             <button
