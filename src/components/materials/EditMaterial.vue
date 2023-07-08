@@ -89,6 +89,7 @@
             </button>
 
             <button
+              :disabled="haveErrors"
               @click="updateMaterial"
               type="button"
               class="btn btn-primary"
