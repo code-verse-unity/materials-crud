@@ -1,4 +1,4 @@
-# materials
+# materials CRUD
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -19,6 +19,7 @@ npm install
 ### Compile and Hot-Reload for Development
 
 ```sh
+npm run json-server
 npm run dev
 ```
 
