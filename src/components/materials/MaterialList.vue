@@ -7,6 +7,8 @@
           <th scope="col">Designation</th>
           <th scope="col">État</th>
           <th scope="col">Quantité</th>
+          <th scope="col">Modifier</th>
+          <th scope="col">Supprimer</th>
         </tr>
       </thead>
 
