@@ -1,18 +1,17 @@
 <template>
   <div>
-    <table class="table">
-      <thead class="thead-dark">
+    <table class="table table-striped">
+      <thead class="table-primary">
         <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Designation</th>
-          <th scope="col">État</th>
-          <th scope="col">Quantité</th>
-          <th scope="col">Modifier</th>
-          <th scope="col">Supprimer</th>
+          <th class="" scope="col">Id</th>
+          <th class="text-center" scope="col">Designation</th>
+          <th class="" scope="col">État</th>
+          <th class="text-center" scope="col">Quantité</th>
+          <th class="text-center" scope="col" style="width">Actions</th>
         </tr>
       </thead>
 
-      <tbody>
+      <tbody class="">
         <MaterialItem
           v-for="material in materials"
           :key="material.id"

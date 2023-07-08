@@ -1,17 +1,20 @@
 <template>
   <tr>
-    <th scope="row">{{ id }}</th>
-    <td>{{ name }}</td>
-    <td>{{ status }}</td>
-    <td>{{ quantity }}</td>
-    <td><EditMaterial :id="id" :name="name" :status="status" :quantity="quantity" /></td>
-    <td><DeleteMaterial :id="id" :name="name" :status="status" :quantity="quantity" /></td>
+    <th class="align-middle fw-normal" scope="row">{{ id }}</th>
+    <td class="align-middle fw-bold">{{ name }}</td>
+    <td class="align-middle fw-bold" :class="[statusClass]">{{ status }}</td>
+    <td class="align-middle text-end text-primary fw-bold" style="width: 1rem">{{ quantity }}</td>
+    <td class="align-middle text-end" style="max-width: 1rem">
+      <EditMaterial :id="id" :name="name" :status="status" :quantity="quantity" class="me-2" />
+      <DeleteMaterial :id="id" :name="name" :status="status" :quantity="quantity" />
+    </td>
   </tr>
 </template>
 
 <script setup>
 import DeleteMaterial from "./DeleteMaterial.vue";
 import EditMaterial from "./EditMaterial.vue";
+import { computed } from "vue";
 
 const props = defineProps({
   id: {
@@ -31,6 +34,16 @@ const props = defineProps({
     required: true
   }
 });
+
+const statusClass = computed(() => {
+  const statusClass = {
+    bon: "text-success",
+    mauvais: "text-warning",
+    abîmé: "text-danger"
+  };
+
+  return statusClass[props.status];
+});
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

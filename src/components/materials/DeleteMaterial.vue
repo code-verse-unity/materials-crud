@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="d-inline-block text-start">
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-danger" data-bs-toggle="modal" :data-bs-target="bsTarget">
       Supprimer
@@ -18,7 +18,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5">
-              Supprimer le material <span class="text-danger fw-bold">{{ name }}</span>
+              Supprimer le matériel <span class="text-danger fw-bold">{{ name }}</span>
             </h1>
 
             <button
