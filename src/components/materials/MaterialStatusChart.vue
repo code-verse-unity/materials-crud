@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex justify-content-evenly align-items-center">
-    <div class="w-50">
+    <div class="w-50" style="max-width: 20rem;">
       <Doughnut
         :options="chartOptions"
         :data="chartData"
@@ -24,7 +24,7 @@
               ></span>
             </td>
             <td class="align-middle">Bon</td>
-            <td class="align-middle text-end fw-bold text-xl text-success display-5">{{ goodCount }}</td>
+            <td class="align-middle text-end fw-bold text-xl text-success display-6">{{ goodCount }}</td>
           </tr>
           <tr>
             <td class="align-middle">
@@ -38,7 +38,7 @@
               ></span>
             </td>
             <td class="align-middle">Mauvais</td>
-            <td class="align-middle text-end fw-bold text-xl text-warning display-5">{{ badCount }}</td>
+            <td class="align-middle text-end fw-bold text-xl text-warning display-6">{{ badCount }}</td>
           </tr>
           <tr>
             <td class="align-middle">
@@ -52,12 +52,12 @@
               ></span>
             </td>
             <td class="align-middle">Abîmé</td>
-            <td class="align-middle text-end fw-bold text-xl text-danger display-5">{{ damagedCount }}</td>
+            <td class="align-middle text-end fw-bold text-xl text-danger display-6">{{ damagedCount }}</td>
           </tr>
 
           <tr>
             <td class="align-middle text-center fw-bold" colspan="2">Total</td>
-            <td class="align-middle text-end fw-bold text-xl text-primary display-5">{{ totalCount }}</td>
+            <td class="align-middle text-end fw-bold text-xl text-primary display-6">{{ totalCount }}</td>
           </tr>
         </tbody>
       </table>

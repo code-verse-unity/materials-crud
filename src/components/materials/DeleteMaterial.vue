@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="d-inline-block text-start">
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-danger" data-bs-toggle="modal" :data-bs-target="bsTarget">
       Supprimer
