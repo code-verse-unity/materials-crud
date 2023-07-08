@@ -1,5 +1,5 @@
 <script setup>
-import TheWelcome from "../components/TheWelcome.vue";
+import MaterialList from "../components/materials/MaterialList.vue";
 import { useMaterialStore } from "../stores/material.js";
 import { onMounted } from "vue";
 
@@ -29,6 +29,6 @@ const updateMaterial = () => {
   <main>
     <button @click="updateMaterial">update material 3</button>
     <button @click="deleteMaterial">delete material 1</button>
-    <TheWelcome />
+    <MaterialList :materials="materialStore.materials" />
   </main>
 </template>
