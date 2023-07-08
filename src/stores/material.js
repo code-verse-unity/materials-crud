@@ -49,7 +49,7 @@ export const useMaterialStore = defineStore("material", () => {
     axios.post("/materials", data).then((response) => materials.value.push(response.data));
   };
 
-  const updateMaterial = (id, updates) => {
+  const updateMaterial = (id, updates) =>
     getMaterial(id)
       .then((material) => {
         for (const key in updates) {
@@ -69,7 +69,6 @@ export const useMaterialStore = defineStore("material", () => {
           }
         })
       );
-  };
 
   const deleteMaterial = (id) => {
     axios.delete(`/materials/${id}`).then(() => {
