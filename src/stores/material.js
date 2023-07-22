@@ -45,9 +45,8 @@ export const useMaterialStore = defineStore("material", () => {
 
   const findIndex = (id) => materials.value.findIndex((value) => value.id === id);
 
-  const createMaterial = (data) => {
+  const createMaterial = (data) =>
     axios.post("/materials", data).then((response) => materials.value.push(response.data));
-  };
 
   const updateMaterial = (id, updates) =>
     getMaterial(id)
